@@ -8,6 +8,8 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password')
         # will need to process these
+        #to add - flashing messages
+        #hi
     return render_template("login.html")
 
 @auth.route('/logout')
@@ -19,10 +21,12 @@ def sign_up():
     if request.method == 'POST':
         email = request.form
         firstName = request.form.get('firstName')
-        password1 = request.form.get('password1')
-        password2 = request.form.get('password2')
+        pword1 = request.form.get('password1')
+        pword2 = request.form.get('password2')
 
         #will need to process these
+        if len(email) < 4:
+            print("email too short")
 
         
     return render_template("signup.html")
